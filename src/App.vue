@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <div class="container-menu">
-      <MainMenu :menu-sections="menuItems"></MainMenu>
+      <Header></Header>
     </div>
     <div>
       
@@ -11,13 +11,13 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import MainMenu from "./components/MainMenu.vue";
+import Header from "./components/Header.vue";
 import MenuSection from "./types/MenuSection";
 
 export default defineComponent({
   name: "App",
   components: {
-    MainMenu,
+    Header,
   },
   setup() {
     const menuItems: Array<MenuSection> = [
