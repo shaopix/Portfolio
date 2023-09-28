@@ -1,6 +1,6 @@
 interface MenuItem {
-    label: string,
-    componentName: string
+    name: string,
+    anchor: string
    }
 
 export default MenuItem
