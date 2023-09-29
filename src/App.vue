@@ -2,10 +2,11 @@
   <div class="app">
     <div class="container-menu">
       <HeaderApp></HeaderApp>
-      <MainSection></MainSection>
     </div>
     <div>
-      
+      <ContainerSection background-color="#f2f2f2">
+        <ImageProfil></ImageProfil>
+      </ContainerSection>
     </div>
   </div>
 </template>
@@ -13,18 +14,18 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import HeaderApp from "./components/HeaderApp.vue";
-import MainSection from "./components/MainSection.vue";
+import ContainerSection from "./components/ContainerSection.vue";
+import ImageProfil from "./components/ImageProfil.vue";
 
 export default defineComponent({
   name: "App",
   components: {
     HeaderApp,
-    MainSection
-  },
+    ContainerSection,
+    ImageProfil
+},
   setup() {
-    
-    return {
-    };
+    return {};
   },
 });
 </script>
