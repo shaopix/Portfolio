@@ -8,12 +8,27 @@ import { defineComponent, reactive } from "vue";
 
 export default defineComponent({
   name: "MainSection",
-  props: ["backgroundColor", "height"],
+  props:{
+    backgroundColor:{
+      type: String,
+      default: "#ffffff"
+    },
+    height:{
+      type: Number,
+      default: 403
+    },
+    justifyContent:{
+      type: String,
+      default:"flex-start"
+    }
+    
+  },
   methods: {},
   setup(props) {
     const styleObject = reactive({
       "background-color": props.backgroundColor,
       height: `${props.height}px`,
+      "justify-content": props.justifyContent,
     });
     return { styleObject };
   },
@@ -22,7 +37,6 @@ export default defineComponent({
 <style scoped lang="scss">
 .section-background {
   display: flex;
-  justify-content: center;
   width: 100%;
 }
 </style>

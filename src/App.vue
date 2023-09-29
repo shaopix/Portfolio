@@ -4,8 +4,24 @@
       <HeaderApp></HeaderApp>
     </div>
     <div>
-      <ContainerSection background-color="#f2f2f2">
+      <ContainerSection background-color="#f2f2f2" justify-content="center">
         <ImageProfil></ImageProfil>
+      </ContainerSection>
+      <ContainerSection background-color="#ffffff" justify-content="center">
+        <section class="principal-titre-container">
+          <h1 class="principal-title">
+            <span class="bold">Portfolio</span> d'Alexandre Annequin
+          </h1>
+          <p class="sumarry-page">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque mollis a urna nec maximus.
+            <br />Suspendisse eleifend vel leo sit amet suscipit. Etiam vel
+            nulla nisi. Sed auctor diam sit amet nunc volutpat tincidunt.
+            <br />Vivamus sed sem sed tellus consequat consectetur. Aliquam sem
+            magna, pellentesque sed scelerisque sed, tincidunt maximus enim.
+            
+          </p>
+        </section>
       </ContainerSection>
     </div>
   </div>
@@ -22,8 +38,8 @@ export default defineComponent({
   components: {
     HeaderApp,
     ContainerSection,
-    ImageProfil
-},
+    ImageProfil,
+  },
   setup() {
     return {};
   },
@@ -38,5 +54,24 @@ body {
 .container-menu {
   display: flex;
   margin: 0;
+}
+.principal-titre-container {
+  position: relative;
+  top: 115px;
+  text-align: center;
+  .principal-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    font-size: 40px;
+    text-transform: uppercase;
+    .bold {
+      font-weight: bold;
+    }
+    
+  }
+  .sumarry-page {
+      width: 650px;
+      text-align: justify;
+    }
 }
 </style>
