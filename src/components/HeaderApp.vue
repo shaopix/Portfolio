@@ -1,6 +1,6 @@
 <template>
   <div id="header">
-    <img src="../assets/logo_portfolio.png"/>
+    <img class="logo" src="../assets/logo_portfolio.png"/>
     <MainMenu></MainMenu>
   </div>
 </template>
@@ -27,8 +27,9 @@ export default defineComponent({
   width: 100%;
   font-family: Bukhari Script;
   display: flex;
-  img{
+  .logo{
     width: 183px;
+    margin-top: 6px;
   }
 }
 </style>
