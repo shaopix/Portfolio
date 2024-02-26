@@ -1,8 +1,8 @@
 <template>
   <div class="menu">
-    <div class="menu__link hover-effect">Acceuil</div>
-    <summary class="menu__link hover-effect">Exemple</summary>
-    <div class="menu__link hover-effect" >Contact</div>
+    <a href="/" class="menu__link hover-effect">Acceuil</a>
+    <a href="/exemple" class="menu__link hover-effect">Exemple</a>
+    <a class="menu__link hover-effect" >Contact</a>
   </div>
 </template>
 <script lang="ts">

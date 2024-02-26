@@ -7,7 +7,7 @@
 import { defineComponent, reactive } from "vue";
 
 export default defineComponent({
-  name: "MainSection",
+  name: "ContainerSection",
   props:{
     backgroundColor:{
       type: String,
@@ -16,6 +16,10 @@ export default defineComponent({
     height:{
       type: Number,
       default: 403
+    },
+    marginTop:{
+      type: Number,
+      required: false
     },
     justifyContent:{
       type: String,
@@ -28,7 +32,8 @@ export default defineComponent({
     const styleObject = reactive({
       "background-color": props.backgroundColor,
       height: `${props.height}px`,
-      "justify-content": props.justifyContent,
+      "margin-top":`${props.marginTop}px`,
+      "justify-content": props.justifyContent
     });
     return { styleObject };
   },
