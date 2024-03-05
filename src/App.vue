@@ -10,8 +10,6 @@
       <ContainerSection
         background-color="#ffffff"
         justify-content="center"
-        :height="492"
-        :margin-top="100"
       >
         <router-view></router-view>
       </ContainerSection>

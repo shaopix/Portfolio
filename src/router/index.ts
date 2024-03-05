@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory, Router } from "vue-router";
 import HomePage from "@/views/HomePage.vue";
-import ExempleRoute from "@/components/ExempleRoute.vue"
+import ComposableView from "@/views/ComposableView.vue";
 
 const router: Router = createRouter({
-  routes: [{ path: "/", component: HomePage }, {path:"/exemple", component: ExempleRoute}],
+  routes: [{ path: "/", component: HomePage }, {path:"/exemple", component: ComposableView}],
   history: createWebHistory(),
 });
 

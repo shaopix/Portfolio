@@ -4,35 +4,16 @@
       <h1 class="principal-title">
         <span class="bold">Portfolio</span> d'Alexandre Annequin
       </h1>
-      <div class="joke-container">
-        <div class="question-container">
-          <span>{{ question }}</span>
-        </div>
-        <div class="answer-container">
-          <span v-show="reveal">{{ answer }}</span>
-        </div>
-        <div>
-          <button @click="getJoke()">Click get a Joke</button>
-        </div>
-      </div>
+      
     </section>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import useJoke from "@/composables/useJoke";
 
 export default defineComponent({
   name: "App",
-  components: {
-    
-  },
-  setup() {
-    const { reveal, question, answer, getJoke } = useJoke();
-
-    return { reveal, question, answer, getJoke };
-  },
 });
 </script>
 
