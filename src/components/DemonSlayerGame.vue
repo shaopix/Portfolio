@@ -5,7 +5,7 @@
 		</div>
 
 		<div v-if="!gameIsRunning && !playerWin && !demonWin">
-			<button @click="handleStartGame">Start Game</button>
+			<button @click="handleStartGame" class="button">Start Game</button>
 		</div>
 		<div v-if="gameIsRunning" class="flex">
 			<div class="player-banner flex">
@@ -33,7 +33,7 @@
 			<button @click="handleStartGame">Rejouer</button>
 		</div>
 
-		<button v-if="gameIsRunning" @click="stopGame">Stop Game</button>
+		<button v-if="gameIsRunning" @click="stopGame" class="button">Stop Game</button>
 
 	</div>
 </template>
@@ -171,14 +171,15 @@ label {
 }
 
 .button {
-	border: none;
-	color: #fff;
-	border-radius: 20px;
-	background-size: 100% auto;
-	font-family: inherit;
-	font-size: 17px;
-	padding: 0.6em 1.5em;
-	margin: 0.5em;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .attack {

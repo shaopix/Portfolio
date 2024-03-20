@@ -8,7 +8,9 @@
         <button @click="checkGuess">Check</button> 
         <div class="hintTry">
             <span>Nombre d'essais: {{nbTry}}</span>
-            <p v-if="message" class="hint">{{ message }}</p>
+            <transition>
+                <p v-if="message">{{ message }}</p>
+            </transition>
         </div>
        
         <button v-if="isGameRunning" @click="stopGame">Stop Game</button>
@@ -35,6 +37,16 @@ export default {
 </script>
 
 <style scoped>
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 .container {
     background-color: #f4f4f4;
     border: 1px solid #ccc;

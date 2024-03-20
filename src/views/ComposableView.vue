@@ -1,14 +1,16 @@
 <template>
   <div>
-    <div class="container-second">
+    <!-- <div class="container-second">
       <DemonSlayerGame />
       <hr>
       <GuessNumber />
-    </div>
+    </div> -->
+    <FarmVille />
   </div>
 </template>
 
 <script lang="ts">
+import FarmVille from "@/components/FarmVille.vue";
 import { defineComponent } from "vue";
 import DemonSlayerGame from "@/components/DemonSlayerGame.vue";
 import GuessNumber from "@/components/GuessNumber.vue";
@@ -16,8 +18,9 @@ import GuessNumber from "@/components/GuessNumber.vue";
 export default defineComponent({
   name: "ComposableView",
   components: {
-    DemonSlayerGame,
-    GuessNumber
+    // DemonSlayerGame,
+    // GuessNumber,
+    FarmVille
   },
 });
 </script>
