@@ -1,5 +1,9 @@
 <template>
     <canvas ref="canvas" @keydown="movePlayer" tabindex="0"></canvas>
+    <div>
+        Position du point bleu: X {{ playerX }}, Y {{ playerY }}
+        Reserve: {{ reservePoints }}
+    </div>
 </template>
 
 <script>
@@ -10,7 +14,8 @@ export default {
             context: null,
             playerX: null,
             playerY: null,
-            redPoints: []
+            redPoints: [],
+            reservePoints: 5 // Add reservePoints data property
         };
     },
     mounted() {
@@ -20,7 +25,7 @@ export default {
         this.playerY = this.canvas.height / 2;
 
         window.addEventListener('keydown', this.movePlayer);
-        
+
         this.draw();
         setInterval(this.updatePointsTimer, 1000); // Add setInterval to call updatePointsTimer every second
     },
@@ -47,6 +52,8 @@ export default {
             this.context.strokeRect(0, 0, this.canvas.width, this.canvas.height);
         },
         movePlayer(event) {
+            const index = this.redPoints.findIndex(point => point.x === this.playerX && point.y === this.playerY);
+
             switch (event.key) {
                 case 'z':
                     if (this.playerY > 0) {
@@ -77,7 +84,14 @@ export default {
                     }
                     break;
                 case ' ':
-                    this.redPoints.push({ x: this.playerX, y: this.playerY, timer: 5 }); // Set timer to 5 seconds
+                    if (index !== -1 && this.context.fillStyle !== 'green') { // Check if the point exists and is not green
+                        this.redPoints.splice(index, 1); // Remove the red point
+                        const randomPoints = Math.floor(Math.random() * 3) + 1; // Generate a random number between 1 and 3
+                        this.reservePoints += randomPoints; // Add the random points to the reserve
+                    } else if (this.reservePoints > 0 && this.context.fillStyle !== 'green') { // Check if there are reserve points available and the point is not green
+                        this.redPoints.push({ x: this.playerX, y: this.playerY, timer: 5 }); // Set timer to 5 seconds
+                        this.reservePoints -= 1; // Decrease the reserve points count
+                    }
                     break;
             }
 
